@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text to Speech</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="workspace" aria-labelledby="app-title">
+      <div class="masthead">
+        <p class="eyebrow">Voice Studio</p>
+        <h1 id="app-title">Text to Speech</h1>
+        <p class="intro">Type or paste text, choose a voice, and play it aloud in your browser.</p>
+      </div>
+
+      <label class="field-label" for="text-input">Text</label>
+      <textarea id="text-input" rows="10" placeholder="Write something to hear it spoken...">Hello! This is a text to speech converter.</textarea>
+
+      <div class="controls-grid">
+        <label class="control">
+          <span>Voice</span>
+          <select id="voice-select" aria-label="Voice"></select>
+        </label>
+
+        <label class="control">
+          <span>Rate <output id="rate-value">1.0</output></span>
+          <input id="rate" type="range" min="0.5" max="2" value="1" step="0.1">
+        </label>
+
+        <label class="control">
+          <span>Pitch <output id="pitch-value">1.0</output></span>
+          <input id="pitch" type="range" min="0" max="2" value="1" step="0.1">
+        </label>
+      </div>
+
+      <div class="actions">
+        <button id="speak-button" type="button">Speak</button>
+        <button id="pause-button" type="button" class="secondary">Pause</button>
+        <button id="resume-button" type="button" class="secondary">Resume</button>
+        <button id="stop-button" type="button" class="danger">Stop</button>
+      </div>
+
+      <p id="status" class="status" role="status">Ready</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
